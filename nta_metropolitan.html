@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Project Manager - NTA Metropolitan | Gilad Gonen</title>
+    <meta name="description" content="Senior Project Manager role at NTA Metropolitan Mass Transit System - Israel's first underground subway system, $450M budget, Red Line LRT project.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .project-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .project-highlight {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .project-period {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: #e74c3c;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .back-to-portfolio {
+            background: #34495e;
+            color: white;
+        }
+
+        .back-to-portfolio:hover {
+            background: #2c3e50;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #e74c3c;
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Role Overview */
+        .project-overview {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .overview-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Role Stats */
+        .project-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #e74c3c;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .stat-description {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        /* Project Highlights */
+        .project-highlights {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .highlight-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .highlight-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Responsibilities */
+        .responsibilities {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .responsibilities h3 {
+            color: #2c3e50;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .responsibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .responsibility-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .responsibility-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .responsibility-card ul {
+            list-style: none;
+        }
+
+        .responsibility-card li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #666;
+        }
+
+        .responsibility-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Role Gallery */
+        .project-gallery {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background: white;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+        }
+
+        .gallery-caption h4 {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .gallery-caption p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Links & Resources */
+        .project-links {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .links-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Back to Portfolio Button */
+        .back-section {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .back-button {
+            background: #34495e;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #2c3e50;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 73, 94, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .project-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .responsibility-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+
+            nav li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Senior Project Manager</h1>
+            <p class="project-subtitle">NTA Metropolitan Mass Transit System</p>
+            <p class="project-highlight">Israel's First Underground Subway System</p>
+            <p class="project-period">January 2020 - April 2023 | Tel Aviv, Israel</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#stats">Role Statistics</a></li>
+                <li><a href="#highlights">Key Achievements</a></li>
+                <li><a href="#responsibilities">Responsibilities</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#links">Resources</a></li>
+                <li><a href="index.html" class="back-to-portfolio">← Back to Portfolio</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Role Overview -->
+            <section id="overview" class="section">
+                <div class="project-overview">
+                    <h2>Role Overview</h2>
+                    <p class="overview-text">
+                        The Red Line LRT represents a historic achievement as Israel's first underground light rail system. As Senior Project Manager, 
+                        I served as the owner's representative for this $7 billion CAD project, managing $450M responsibility for three underground 
+                        stations. This role required coordinating the most complex urban infrastructure project in Israeli history, navigating dense 
+                        urban environments, managing 24/6 operations, and integrating cutting-edge transit technology while ensuring seamless 
+                        coordination between multiple contractors and stakeholders across five municipalities in Tel Aviv's metropolitan area.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Role Statistics -->
+            <section id="stats" class="section">
+                <h2>Role Statistics</h2>
+                <div class="project-stats">
+                    <div class="stat-card">
+                        <span class="stat-icon">🚇</span>
+                        <div class="stat-number">$7B</div>
+                        <div class="stat-label">Total Project Value</div>
+                        <div class="stat-description">24 km LRT line, 12 km underground, 10 stations</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">💰</span>
+                        <div class="stat-number">$450M</div>
+                        <div class="stat-label">My Responsibility</div>
+                        <div class="stat-description">3 Underground Stations: Arlosoroff, Shaul-Hamelech, Yehudit</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">👥</span>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Project Managers</div>
+                        <div class="stat-description">Led team managing contractors and schedules</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">🏗️</span>
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Underground Stations</div>
+                        <div class="stat-description">Subject matter expert for all Red Line stations</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Achievements -->
+            <section id="highlights" class="section">
+                <div class="project-highlights">
+                    <h2>Key Achievements</h2>
+                    <div class="highlights-grid">
+                        <div class="highlight-card">
+                            <h4>🎯 Historic Milestone</h4>
+                            <p>Successfully delivered Israel's first underground subway system, a groundbreaking achievement in Israeli infrastructure development.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>🏙️ Complex Urban Environment</h4>
+                            <p>Managed construction in dense Tel Aviv metropolitan area across 5 municipalities with minimal disruption to city operations.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>⏰ 24/6 Operations</h4>
+                            <p>Coordinated round-the-clock construction operations to meet tight project deadlines while maintaining safety standards.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>🤝 Multi-Stakeholder Coordination</h4>
+                            <p>Successfully coordinated between heavy civil contractors, fit-out contractors, and appointed contractors for HVAC, VTC, and Fire safety.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>📋 Occupancy Permits</h4>
+                            <p>Secured all required occupancy permits for underground stations, ensuring full operational readiness for transit system launch.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h4>🔧 Subject Matter Expert</h4>
+                            <p>Served as technical authority for all 10 underground stations of the Red Line, providing expertise across the entire system.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Responsibilities -->
+            <section id="responsibilities" class="section">
+                <div class="responsibilities">
+                    <h3>Key Responsibilities & Scope</h3>
+                    <div class="responsibility-grid">
+                        <div class="responsibility-card">
+                            <h4>🎯 Client Representation</h4>
+                            <ul>
+                                <li>Acted as Client Lead for all coordination and operations</li>
+                                <li>Managed external project managers and contractors</li>
+                                <li>Approved contractor payments and financial reporting</li>
+                                <li>Coordinated special events and site visits</li>
+                            </ul>
+                        </div>
+                        <div class="responsibility-card">
+                            <h4>🏗️ Technical Management</h4>
+                            <ul>
+                                <li>Managed complex contracts and engineering changes</li>
+                                <li>Ensured proper workflow with RFIs and claims</li>
+                                <li>Directed infrastructure and structural fit-out construction</li>
+                                <li>Integrated systems and complex interfaces</li>
+                            </ul>
+                        </div>
+                        <div class="responsibility-card">
+                            <h4>👥 Team Leadership</h4>
+                            <ul>
+                                <li>Managed 6 Project Managers and their teams</li>
+                                <li>Led year-long negotiations with fit-up contractors</li>
+                                <li>Conducted meetings with engineers and design teams</li>
+                                <li>Coordinated multidisciplinary teams across all phases</li>
+                            </ul>
+                        </div>
+                        <div class="responsibility-card">
+                            <h4>📊 Strategic Planning</h4>
+                            <ul>
+                                <li>Created annual workplan and implementation strategies</li>
+                                <li>Managed interfaces between construction phases</li>
+                                <li>Constantly assessed risks for high visibility public projects</li>
+                                <li>Solved complex problems associated with public transit projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Role Gallery -->
+            <section id="gallery" class="section">
+                <div class="project-gallery">
+                    <h2>Role Gallery</h2>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://i.imgur.com/PLACEHOLDER1.jpeg" alt="Underground Station Construction">
+                            <div class="gallery-caption">
+                                <h4>Underground Station Construction</h4>
+                                <p>Deep excavation and structural work for one of the three stations under my management.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://i.imgur.com/PLACEHOLDER2.jpeg" alt="Red Line LRT System">
+                            <div class="gallery-caption">
+                                <h4>Red Line LRT System</h4>
+                                <p>Overview of the complete 24 km Red Line light rail system crossing Tel Aviv metropolitan area.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://i.imgur.com/PLACEHOLDER3.jpeg" alt="Station Systems Integration">
+                            <div class="gallery-caption">
+                                <h4>Station Systems Integration</h4>
+                                <p>Complex integration of HVAC, VTC, and fire safety systems in underground environment.</p>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://i.imgur.com/PLACEHOLDER4.jpeg" alt="Project Team Coordination">
+                            <div class="gallery-caption">
+                                <h4>Project Team Coordination</h4>
+                                <p>Leading coordination meetings with the 6 project managers and contractor teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Links & Resources -->
+            <section id="links" class="section">
+                <div class="project-links">
+                    <h2>Related Links & Resources</h2>
+                    <div class="links-grid">
+                        <a href="https://www.nta.co.il/en" target="_blank" class="link-card">🚇 NTA Metropolitan</a>
+                        <a href="https://www.nta.co.il/en/projects/red-line" target="_blank" class="link-card">🔴 Red Line Project</a>
+                        <a href="https://en.wikipedia.org/wiki/Tel_Aviv_Light_Rail" target="_blank" class="link-card">📖 Tel Aviv Light Rail</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Portfolio -->
+            <div class="back-section">
+                <a href="index.html" class="back-button">← Back to Portfolio</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
